@@ -74,7 +74,7 @@ export default App;
       //add a button to change to classic grid
       //add a timer
       //add a table to show times
-      add to git
+      //add to git
       store times somehow maybe json file or local storage
       //add settings
       add a tutorial
