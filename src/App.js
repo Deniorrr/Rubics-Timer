@@ -80,7 +80,7 @@ export default App;
       add a tutorial
       install css preprocessor
       //style buttons
-      style table
+      //style table
 
       
 */
