@@ -4,14 +4,15 @@ import Record from './Record'
 class Scoreboard extends React.Component {
     table_header = []
     table_content = [];
-    counter = 0
     constructor(props){
         super(props);
         this.set_table_header();
+        this.records = this.props.records
     }
     render(){
-        this.counter = 0
-        this.table_content = this.props.records.map((record) => <Record counter={++this.counter} time={record[1]}/>);
+        if(this.records.length > 0)
+            this.append_ids();
+        this.table_content = this.records.map((record) => <Record counter={record[2]} time={record[1]} delete_record={(id)=>{this.delete_record(id)}}/>);
         return <aside id='scoreboard'>
             <table><tbody>
                 {this.table_header}
@@ -22,7 +23,14 @@ class Scoreboard extends React.Component {
     set_table_header(){
         this.table_header.push(<tr><th>ID</th><th>TIME</th></tr>)
     }
-    
+    append_ids(){
+        let id = [1]
+        this.records.forEach(element => element[2] = id++)
+    }
+    delete_record(id){
+         this.records.splice(id-1, 1)
+         this.forceUpdate()
+    }
 }
 
 export default Scoreboard

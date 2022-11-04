@@ -3,8 +3,7 @@ import React from 'react'
 class Record extends React.Component {
     render(){
         return(
-
-            <tr>
+            <tr onClick={()=>this.delete_record(this.props.counter)}>
             <td>
                 {this.props.counter}
             </td>
@@ -13,6 +12,9 @@ class Record extends React.Component {
             </td>
         </tr>
         )
+    }
+    delete_record(id){
+        this.props.delete_record(id);
     }
 }
 
