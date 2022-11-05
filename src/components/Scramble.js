@@ -1,5 +1,6 @@
 import React from 'react'
 import CubeGridDisplay from './CubeGridDisplay'
+import ScrambleCSS from './style/Scramble.module.css'
 
 class Scramble extends React.Component {
     scramble_visual = [];
@@ -14,7 +15,7 @@ class Scramble extends React.Component {
         }
         return (
         <header>
-            <div id="scramble">
+            <div id={ScrambleCSS.scramble}>
                 <h1>{this.scramble}</h1>
             </div>
                 <CubeGridDisplay scramble={this.scramble_visual} settings={this.settings}/>

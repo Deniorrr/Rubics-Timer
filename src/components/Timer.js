@@ -1,4 +1,5 @@
 import React from 'react'
+import TimerCSS from './style/Timer.module.css'
 
 class Timer extends React.Component {
     constructor(props){
@@ -11,7 +12,7 @@ class Timer extends React.Component {
         window.addEventListener('keyup', this.onrelease.bind(this));
     }
     render() {
-        return <div id="timer" style={{color: this.state.text_color}}>
+        return <div id={TimerCSS.timer} style={{color: this.state.text_color}}>
             {this.state.time}
             </div>
     }

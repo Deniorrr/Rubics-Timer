@@ -1,0 +1,32 @@
+
+#help_button{
+    margin: 20px;
+    margin-right: 0px;
+    padding: 0 15px;
+    border-radius: 10%;
+  }
+  
+  #help_button:hover{
+    background: #444;
+    cursor: pointer;
+  }
+  
+  #question_mark{
+    height: 70px;
+  }
+  
+  #question_mark:hover{
+    animation: bounce 0.4s ;
+  }
+  
+  @keyframes bounce{
+    0%{
+      transform:translateY(0)
+    }
+    50%{
+      transform:translateY(-20px);
+    }
+    100%{
+      transform:translateY(0);
+    }
+  }

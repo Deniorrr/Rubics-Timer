@@ -1,0 +1,157 @@
+#scramble {
+    margin: 0 auto;
+    padding: 0 200px;
+
+}
+
+#cube_grid td {
+    width: 30px;
+    height: 30px;
+}
+
+/* for 3d cube */
+
+
+.fancy#cube_container {
+    position: fixed;
+    bottom: 400px;
+    right: 400px;
+    perspective: 1500px;
+    transform: translateX(200px) translateY(200px);
+}
+
+.fancy>#cube_grid {
+    height: 104px;
+    width: 104px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform forwards;
+    transform: rotateX(-25deg) rotateY(45deg);
+
+}
+
+.fancy>#cube_grid.show_front {
+    animation: show_front 1s forwards;
+}
+
+.fancy>#cube_grid.show_back {
+    animation: show_back 1s forwards;
+}
+
+.fancy>#cube_grid>table {
+    height: 104px;
+    width: 104px;
+    position: absolute;
+    background-color: #000000;
+}
+
+.fancy>#cube_grid>table:nth-child(1) {
+    transform: rotateX(90deg) translateZ(52px);
+}
+
+.fancy>#cube_grid>table:nth-child(2) {
+    transform: rotateY(-90deg) translateZ(52px);
+}
+
+.fancy>#cube_grid>table:nth-child(3) {
+    transform: rotateX(0deg) translateZ(52px);
+}
+
+.fancy>#cube_grid>table:nth-child(4) {
+    transform: rotateY(90deg) translateZ(52px);
+}
+
+.fancy>#cube_grid>table:nth-child(5) {
+    transform: rotateX(180deg) translateZ(52px);
+}
+
+.fancy>#cube_grid>table:nth-child(6) {
+    transform: rotateX(-90deg) translateZ(52px);
+}
+
+/* for simple cube */
+
+.simple#cube_container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.simple>#cube_grid {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        ". side1 . ."
+        "side2 side3 side4 side5"
+        ". side6 . .";
+}
+
+.simple>#cube_grid>table:nth-child(1) {
+    grid-area: side1;
+}
+
+.simple>#cube_grid>table:nth-child(2) {
+    grid-area: side2;
+}
+
+.simple>#cube_grid>table:nth-child(3) {
+    grid-area: side3;
+}
+
+.simple>#cube_grid>table:nth-child(4) {
+    grid-area: side4;
+}
+
+.simple>#cube_grid>table:nth-child(5) {
+    grid-area: side5;
+}
+
+.simple>#cube_grid>table:nth-child(6) {
+    grid-area: side6;
+}
+
+
+#cube_buttons {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+#cube_buttons button {
+    border: none;
+    margin: 5px;
+    color: white;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    font-weight: 600;
+    background-color: rgb(15, 82, 184);
+    cursor: pointer;
+}
+
+#cube_buttons button:hover {
+    background-color: rgb(76, 121, 187);
+}
+
+@keyframes show_back {
+    from {
+        transform: rotateX(-25deg) rotateY(45deg);
+    }
+
+    to {
+        transform: rotateX(25deg) rotateY(225deg);
+    }
+}
+
+@keyframes show_front {
+    from {
+        transform: rotateX(25deg) rotateY(225deg);
+    }
+
+    to {
+        transform: rotateX(-25deg) rotateY(45deg);
+    }
+}

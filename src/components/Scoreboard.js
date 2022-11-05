@@ -1,5 +1,6 @@
 import React from 'react'
 import Record from './Record'
+import ScoreboardCSS from './style/Scoreboard.module.css'
 
 class Scoreboard extends React.Component {
     table_header = []
@@ -13,7 +14,7 @@ class Scoreboard extends React.Component {
         if(this.records.length > 0)
             this.append_ids();
         this.table_content = this.records.map((record) => <Record counter={record[2]} time={record[1]} delete_record={(id)=>{this.delete_record(id)}}/>);
-        return <aside id='scoreboard'>
+        return <aside id={ScoreboardCSS.scoreboard}>
             <table><tbody>
                 {this.table_header}
                 {this.table_content}
