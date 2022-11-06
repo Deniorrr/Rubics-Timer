@@ -21,7 +21,6 @@ class App extends React.Component{
         blue:"#006bee",
         yellow:"#fdf400"
       }
-
     }
   }
   set_new_scramble = true;

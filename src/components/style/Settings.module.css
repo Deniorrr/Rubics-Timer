@@ -93,6 +93,14 @@ input[type="color"] {
     background-color: rgb(172, 74, 74);
 }
 
+#reset {
+    background-color: rgb(26, 88, 168);
+}
+
+#reset:hover {
+    background-color: rgb(69, 113, 170);
+}
+
 .show_form {
     animation: show_settings 0.2s forwards;
 }

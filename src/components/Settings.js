@@ -3,18 +3,27 @@ import Spanner from './../assets/cog.svg'
 import SettingsCSS from './style/Settings.module.css'
 
 class Settings extends React.Component {
-    settings;
     constructor(props){
         super(props);
-        this.settings = props.settings;
         this.change_setting_value = this.change_setting_value.bind(this);
     }
 
     state = {
-        show_settings:false
+        show_settings:false,
+        colors: this.props.settings.colors
     }
-    
+    default_settings ={
+            colors: {
+                white:"#ffffff",
+                orange:"#ff6400",
+                green:"#05b527",
+                red:"#b91818",
+                blue:"#006bee",
+                yellow:"#fdf400"
+            }
+    }
     render(){
+        this.settings = this.props.settings;
         return(
         <div id={SettingsCSS.settings}>
             <div id={SettingsCSS.settings_button} title="Settings" onClick={() => this.switch_form()}>
@@ -39,6 +48,7 @@ class Settings extends React.Component {
                 <div id={SettingsCSS.buttons}>
                     <button id={SettingsCSS.save} onClick={()=> this.save_settings()}>Save</button>
                     <button id={SettingsCSS.cancel} onClick={()=> this.cancel()}>Cancel</button>
+                    <button id={SettingsCSS.reset} onClick={()=> this.reset()}>Reset</button>
                 </div>
             </div>
         </div>
@@ -60,6 +70,26 @@ class Settings extends React.Component {
         }else{
             this.setState({show_settings: true})
         }
+    }
+    apply_settings(){
+        
+    }
+    reset(){
+        this.props.change_settings(
+            {
+                colors: {
+                    white:"#ffffff",
+                    orange:"#ff6400",
+                    green:"#05b527",
+                    red:"#b91818",
+                    blue:"#006bee",
+                    yellow:"#fdf400"
+                }
+            }
+        )
+        this.setState({
+            colors: this.default_settings.colors
+        })
     }
 }
 

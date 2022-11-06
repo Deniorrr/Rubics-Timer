@@ -9,6 +9,7 @@ class Scramble extends React.Component {
         this.settings = this.props.settings
     }
     render(){
+        this.settings = this.props.settings
         if(this.props.set_new_scramble){
             this.generate_visualisation();
             this.set_scramble()

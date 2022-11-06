@@ -4,13 +4,13 @@ import ScrambleCSS from './style/Scramble.module.css'
 class CubeGridDisplay extends React.Component {
     constructor(props){
         super(props);
-        this.colors = this.props.settings.colors;
     }
     state={
         button_classname: ScrambleCSS.fancy,
         cube_classname: ScrambleCSS.show_front
     }
     render(){
+        this.colors = this.props.settings.colors;
         let cube_grid = [];
         for (let i=0; i<6; i++){//for each side
             let side = [];
@@ -39,14 +39,6 @@ class CubeGridDisplay extends React.Component {
     }
     cube_display_3d = true
     front_side_displayed = false
-    // colors = {
-    //     white:"#ffffff",
-    //     orange:"#ff6400",
-    //     green:"#05b527",
-    //     red:"#b91818",
-    //     blue:"#006bee",
-    //     yellow:"#fdf400"
-    // }
     tile_styled(tile_number){
         return (
             <td style={{backgroundColor: this.colors[this.props.scramble[tile_number]]}}></td>
