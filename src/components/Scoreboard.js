@@ -30,6 +30,7 @@ class Scoreboard extends React.Component {
     }
     delete_record(id){
          this.records.splice(id-1, 1)
+         localStorage.setItem("records", JSON.stringify(this.records))
          this.forceUpdate()
     }
 }

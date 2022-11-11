@@ -8,28 +8,28 @@ import './App.css';
 
 
 class App extends React.Component{
-  
-  records = []
+  default_settings= {
+    colors: {
+      white:"#ffffff",
+      orange:"#ff6400",
+      green:"#05b527",
+      red:"#b91818",
+      blue:"#006bee",
+      yellow:"#fdf400"
+    }
+  }
+  constructor(props){
+    super(props)
+    this.check_localstorage();
+  }
+  records = JSON.parse(localStorage.getItem("records"))
   state={
     last_time:0,
-    settings:{
-      colors: {
-        white:"#ffffff",
-        orange:"#ff6400",
-        green:"#05b527",
-        red:"#b91818",
-        blue:"#006bee",
-        yellow:"#fdf400"
-      }
-    }
+    settings:JSON.parse(localStorage.getItem("settings"))
   }
   set_new_scramble = true;
   last_scramble = 0;
   render(){
-    // if(this.last_scramble){
-    //   this.save_time();
-    //   console.log(this.records)
-    // }
     return(
       <div className="App">
         <Scramble onEnd={(value)=>this.handleScramble(value)} settings={this.state.settings} set_new_scramble={this.set_new_scramble}/>
@@ -57,11 +57,21 @@ class App extends React.Component{
 
   save_time(newtime){
     this.records.push([this.last_scramble, newtime])
+    localStorage.setItem("records", JSON.stringify(this.records))
   }
   change_settings(new_settings){
+    localStorage.setItem("settings", JSON.stringify(new_settings))
     this.setState({
       settings:new_settings
     })
+  }
+  check_localstorage(){
+    if(localStorage.getItem("settings") === null) {
+      localStorage.setItem("settings", JSON.stringify(this.default_settings))
+    }
+    if(localStorage.getItem("records") === null) {
+      localStorage.setItem("records", JSON.stringify([]))
+    }
   }
 }
 
@@ -80,6 +90,4 @@ export default App;
       install css preprocessor
       //style buttons
       //style table
-
-      
 */

@@ -75,21 +75,8 @@ class Settings extends React.Component {
         
     }
     reset(){
-        this.props.change_settings(
-            {
-                colors: {
-                    white:"#ffffff",
-                    orange:"#ff6400",
-                    green:"#05b527",
-                    red:"#b91818",
-                    blue:"#006bee",
-                    yellow:"#fdf400"
-                }
-            }
-        )
-        this.setState({
-            colors: this.default_settings.colors
-        })
+        localStorage.removeItem("settings")
+        window.location.reload(false);
     }
 }
 
