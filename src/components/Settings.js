@@ -71,9 +71,6 @@ class Settings extends React.Component {
             this.setState({show_settings: true})
         }
     }
-    apply_settings(){
-        
-    }
     reset(){
         localStorage.removeItem("settings")
         window.location.reload(false);

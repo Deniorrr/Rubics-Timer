@@ -84,7 +84,7 @@ export default App;
       //add a timer
       //add a table to show times
       //add to git
-      store times somehow maybe json file or local storage
+      //store times somehow maybe json file or local storage
       //add settings
       add a tutorial
       install css preprocessor

@@ -1,32 +1,67 @@
+#help_button {
+  margin: 20px;
+  margin-right: 0px;
+  padding: 0 15px;
+  border-radius: 10%;
+}
 
-#help_button{
-    margin: 20px;
-    margin-right: 0px;
-    padding: 0 15px;
-    border-radius: 10%;
+#help_button:hover {
+  background: #444;
+  cursor: pointer;
+}
+
+#question_mark {
+  height: 70px;
+}
+
+#question_mark:hover {
+  animation: bounce 0.4s;
+}
+
+
+.show_help {
+  animation: show_help 0.2s forwards;
+  display: flex;
+}
+
+.hide_help {
+  display: none;
+}
+
+
+#help_alert{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+#help_text{
+  margin: 0 auto;
+  background-color: red;
+}
+
+@keyframes show_help {
+  from {
+    opacity: 0;
   }
-  
-  #help_button:hover{
-    background: #444;
-    cursor: pointer;
+
+  to {
+    opacity: 1;
   }
-  
-  #question_mark{
-    height: 70px;
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0)
   }
-  
-  #question_mark:hover{
-    animation: bounce 0.4s ;
+
+  50% {
+    transform: translateY(-20px);
   }
-  
-  @keyframes bounce{
-    0%{
-      transform:translateY(0)
-    }
-    50%{
-      transform:translateY(-20px);
-    }
-    100%{
-      transform:translateY(0);
-    }
+
+  100% {
+    transform: translateY(0);
   }
+}
