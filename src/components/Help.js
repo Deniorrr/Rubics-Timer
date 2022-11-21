@@ -1,5 +1,7 @@
 import React from 'react'
 import question_icon from './../assets/question-solid.svg'
+import arrow_right from './../assets/arrow.svg'
+import x_icon from './../assets/x.svg'
 import HelpCSS from './style/Help.module.css'
 
 class Settings extends React.Component {
@@ -25,13 +27,22 @@ class Settings extends React.Component {
                 <div id={HelpCSS.help_button}>
                     <img src={question_icon} alt="Help button" id={HelpCSS.question_mark} title='Help' onClick={() => this.switch_help()}/>
                 </div>
-                <div className={this.state.show_help ? HelpCSS.show_help : HelpCSS.hide_help} id={HelpCSS.help_alert}>
-                    <div id={HelpCSS.help_text}>
-
-                       {this.advices[this.state.advice_number]}
-                       <button onClick={() => this.previous_advice()}>previous</button>
-                       <button onClick={() => this.next_advice()}>next</button>
-
+                <div className={this.state.show_help ? HelpCSS.show_help : HelpCSS.hide_help} id={HelpCSS.help_container}>
+                    <div id={HelpCSS.help}>
+                        <div id={HelpCSS.close}>
+                        <img src={x_icon} onClick={() => this.switch_help()}></img>
+                        </div>
+                        <p id={HelpCSS.prompt}>
+                            {this.advices[this.state.advice_number]}
+                        </p>
+                        <div id={HelpCSS.buttons}>
+                            <div id={HelpCSS.arrow}>
+                                <img src={arrow_right} alt="previous" id={HelpCSS.arrow_left} title='previous' onClick={() => this.previous_advice()}/>
+                            </div>
+                            <div id={HelpCSS.arrow}>
+                                <img src={arrow_right} alt="next" id={HelpCSS.arrow_right} title='next' onClick={() => this.next_advice()}/>
+                            </div>
+                       </div>
                     </div>
                 </div>
             </div>
