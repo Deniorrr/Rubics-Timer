@@ -24,9 +24,9 @@
   background-color: #333;
 }
 
-#scoreboard tr:hover{
-  cursor: not-allowed;
-  background-color: #777;
+#scoreboard td{
+  cursor: pointer;
+
 }
 
 #scoreboard th{

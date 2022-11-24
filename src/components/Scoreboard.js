@@ -13,7 +13,7 @@ class Scoreboard extends React.Component {
     render(){
         if(this.records.length > 0)
             this.append_ids();
-        this.table_content = this.records.map((record) => <Record counter={record[2]} time={record[1]} delete_record={(id)=>{this.delete_record(id)}}/>);
+        this.table_content = this.records.map((record) => <Record counter={record[2]} time={record[1]} scramble={record[0]} delete_record={(id)=>{this.delete_record(id)}}/>);
         return <aside id={ScoreboardCSS.scoreboard}>
             <table><tbody>
                 {this.table_header}

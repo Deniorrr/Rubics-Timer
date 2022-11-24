@@ -1,4 +1,4 @@
-#help_button {
+ #help_button {
   margin: 20px;
   margin-right: 0px;
   padding: 0 15px;
@@ -43,15 +43,15 @@
   border-radius: 20px;
   max-width: 1000px;
 }
+
 #close{
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 #close img{
   cursor: pointer;
 }
-
 #prompt{
   font-size: 1.2em;
   margin:0 20px;

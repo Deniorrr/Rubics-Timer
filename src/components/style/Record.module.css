@@ -1,0 +1,72 @@
+.record:hover{
+  background-color: #777 !important;
+}
+
+#details_container{
+  position: fixed;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background-color: #00000088;
+  cursor:default;
+}
+
+#details{
+  background-color: rgb(58, 58, 58);
+  border: 5px solid rgb(82, 82, 82);
+  border-radius: 5px;
+  place-self: center;
+  padding: 20px;
+}
+
+#close{
+  display: flex;
+  cursor: pointer;
+  justify-content: flex-end;
+}
+
+#name{
+  margin: 0;
+}
+
+#buttons button {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  margin: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#buttons{
+  display: flex;
+  justify-content: center;
+}
+
+#add2 {
+  background-color: rgb(26, 88, 168);
+}
+
+#add2:hover {
+  background-color: rgb(69, 113, 170);
+}
+
+#dnf {
+  background-color: rgb(168, 115, 0);
+}
+
+#dnf:hover {
+  background-color: rgb(233, 159, 0);
+}
+#delete {
+  background-color: rgb(168, 26, 26);
+}
+
+#delete:hover {
+  background-color: rgb(172, 74, 74);
+}
+
