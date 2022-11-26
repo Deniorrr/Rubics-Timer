@@ -14,13 +14,16 @@ class Record extends React.Component {
                 {this.props.id}
             </td>
             <td>
-                {this.props.time}
+                {this.render_time()}
             </td>
            
         </tr>
         )
     }
-    
+    render_time(){
+        if(this.props.dnf)return("DNF")
+        return(String(this.props.time) + (this.props.plus2? "+":""))
+    }
 }
 
 export default Record

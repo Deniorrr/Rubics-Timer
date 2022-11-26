@@ -56,7 +56,7 @@ class App extends React.Component{
   }
 
   save_time(newtime){
-    this.records.push([this.last_scramble, newtime])
+    this.records.push([this.last_scramble, newtime,'id', false, false])//scramble, time, id, has +2, has dnf
     localStorage.setItem("records", JSON.stringify(this.records))
   }
   change_settings(new_settings){
