@@ -10,14 +10,15 @@ class Settings extends React.Component {
         advice_number:0
     }
     advices = [
-        "1. This is an app called 'Rubiks timer. It's designed for speedcubers - people that can solve worlds most popular puzzle, the Rubiks Cube.",
-        "2. This application will help you scramble your cube, record your solving time and track your progress.",
-        "3. To use the app properly, grab your solved cube, face it with white color on top and green in front. Then scramble it according to moves randomly generated in the top part of the app.",
-"4. How to read the notation? Each side has a letter assigned. F for front, L - left, R - right, D - down, B - back, U - up. A single letter by itself refers to a clockwise rotation in 90 degrees. Apostrophe a counterclockwise move. The number 2 marks a double turn. ",
-"5. You can check the scramble with the visualisation displayed in bottom right corner. ",
-"6. To start the timer hold SPACEBAR until the time in the middle will turn green. Releasing it will start counting time. Now it's time to solve your cube. To stop time press SPACEBAR again.",
-"7. Your time will be added to the scoreboard on the left. Press the time to see more details about this scamble.",
-"8. You can also change a few settings to adapt the app to your needs."
+        "This is an app called 'Rubiks timer. It's designed for speedcubers - people that can solve worlds most popular puzzle, the Rubiks Cube.",
+        "This application will help you scramble your cube, record your solving time and track your progress.",
+        "To use the app properly, grab your solved cube, face it with white color on top and green in front. Then scramble it according to moves randomly generated in the top part of the app.",
+        "How to read the notation? Each side has a letter assigned. F for front, L - left, R - right, D - down, B - back, U - up. A single letter by itself refers to a clockwise rotation in 90 degrees. Apostrophe a counterclockwise move. The number 2 marks a double turn. ",
+        "You can check the scramble with the visualisation displayed in bottom right corner. ",
+        "To start the timer hold SPACEBAR until the time in the middle will turn green. Releasing it will start counting time. Now it's time to solve your cube. To stop time press SPACEBAR again.",
+        "Your time will be added to the scoreboard on the left. Press the time to see more details about this scamble.",
+        "You can also change a few settings to adapt the app to your needs.",
+        "Good luck and have fun!"
     ]
     render(){
         return(
@@ -32,7 +33,7 @@ class Settings extends React.Component {
                         <img src={x_icon} onClick={() => this.switch_help()} alt="close button"></img>
                         </div>
                         <p id={HelpCSS.prompt}>
-                            {this.advices[this.state.advice_number]}
+                            {this.state.advice_number+1}. {this.advices[this.state.advice_number]}
                         </p>
                         <div id={HelpCSS.buttons}>
                             <div id={HelpCSS.arrow}>
