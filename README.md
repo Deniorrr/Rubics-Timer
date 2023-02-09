@@ -2,18 +2,7 @@
 
 This is an app called 'Rubiks timer. It's designed for speedcubers - people that can solve worlds most popular puzzle, the Rubiks Cube.
 
-## General info
-This application will help you scramble your cube, record your solving time and track your progress.
-
-You can check the scramble with the visualisation displayed in bottom right corner.
-
-To start the timer hold SPACEBAR until the time in the middle will turn green. Releasing it will start counting time. Now it's time to solve your cube. To stop time press SPACEBAR again.
-
-Your time will be added to the scoreboard on the left. Press the time to see more details about this scamble.
-
-You can also change a few settings to adapt the app to your needs.
-
-## Available Scripts
+## Setup
 
 In the project directory, you can run:
 
@@ -21,6 +10,19 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## General info
+This application will help you scramble your Rubiks cube, record your solving time and track your progress.
+
+It allows you to view your solution times, scrambles and change settings to fit your needs.
+
+## User Manual
+For instructions, run the app and click ":grey_question:" icon in the top right corner.
+
+## Inspiration
+
+The app is inspired by website I used myself for speedcubing: https://cstimer.net/ .
+I knew i could do something that works similarly but looks way better.
 
 ## Author
 Denis Poczęty 
