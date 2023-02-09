@@ -2,9 +2,11 @@
 
 This is an app called 'Rubiks timer. It's designed for speedcubers - people that can solve worlds most popular puzzle, the Rubiks Cube.
 
+## General info
 This application will help you scramble your cube, record your solving time and track your progress.
 
 You can check the scramble with the visualisation displayed in bottom right corner.
+
 To start the timer hold SPACEBAR until the time in the middle will turn green. Releasing it will start counting time. Now it's time to solve your cube. To stop time press SPACEBAR again.
 
 Your time will be added to the scoreboard on the left. Press the time to see more details about this scamble.
